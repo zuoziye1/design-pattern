@@ -1,18 +1,16 @@
 package com.design.pattern.设计模式.行为模式.观察者模式.为什么用它.改成观察者模式;
 
-import lombok.Data;
-
 /**
+ * 假设有这样的老代码，在观察者模式出现前就有了
  * @Author: 姚飞虎
- * @Date: 2023/5/16 7:05 PM
+ * @Date: 2023/6/15 4:04 PM
  * @Description:
  */
-@Data
-public class StudentBuyer extends Buyer{
+public class Older {
 
-    @Override
-    public void 抢票(){
-        System.out.println("以学生价收费");
+    protected 放票系统 tt;
+
+    public void 老人抢票(){
         tt.decrementCount();
     }
 
