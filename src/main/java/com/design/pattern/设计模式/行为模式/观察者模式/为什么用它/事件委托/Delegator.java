@@ -6,7 +6,7 @@ package com.design.pattern.设计模式.行为模式.观察者模式.为什么�
  * @Date: 2023/6/15 4:43 PM
  * @Description:
  */
-public class Delegator {
+public abstract class Delegator {
 
     private EventHandler eventHandler = new EventHandler();
 
@@ -14,7 +14,7 @@ public class Delegator {
      * 添加 处理委托的事件
      * @param event
      */
-    public void addListener(Event event){
+    public void addEvent(Event event){
         eventHandler.addEvent(event);
     }
 
