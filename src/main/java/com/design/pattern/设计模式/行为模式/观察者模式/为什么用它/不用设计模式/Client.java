@@ -1,4 +1,4 @@
-package com.design.pattern.设计模式.行为模式.观察者模式.为什么用它;
+package com.design.pattern.设计模式.行为模式.观察者模式.为什么用它.不用设计模式;
 
 /**
  * @Author: 姚飞虎
