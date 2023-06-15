@@ -9,8 +9,9 @@ public class Client {
 
     public static void main(String[] args) {
         散户 tt = new 散户("小张");
-        tt.addEvent(
-
-        );
+        基金经理 manager = new 基金经理("葛兰");
+        tt.addEvent(new Event(manager,"buyStockA",null));
+        tt.addEvent(new Event(manager,"buyStockB",null));
+        tt.buy();
     }
 }

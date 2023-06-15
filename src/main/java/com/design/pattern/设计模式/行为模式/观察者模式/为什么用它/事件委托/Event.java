@@ -1,5 +1,8 @@
 package com.design.pattern.设计模式.行为模式.观察者模式.为什么用它.事件委托;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 
 import java.lang.reflect.Method;
@@ -10,6 +13,9 @@ import java.lang.reflect.Method;
  * @Date: 2023/6/15 4:23 PM
  * @Description:
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Event {
 
     /**
@@ -26,13 +32,23 @@ public class Event {
 
     @SneakyThrows
     public void invoke(){
-        Method method = target.getClass().getMethod(methodName, this.getParamTypes());
+        Method method;
+        Class[] paramTypes = this.getParamTypes();
+        if(paramTypes == null || paramTypes.length == 0){
+            method = target.getClass().getMethod(methodName);
+        }else {
+            method = target.getClass().getMethod(methodName, paramTypes);
+        }
         method.invoke(target,params);
     }
 
     private Class[] getParamTypes(){
+        if(params == null){
+            return null;
+        }
+
         int size = params.length;
-        if(params != null && size > 0){
+        if( size > 0){
             Class[] result = new Class[size];
             for (int i = 0; i < size; i++) {
                 result[i] = params[i].getClass();

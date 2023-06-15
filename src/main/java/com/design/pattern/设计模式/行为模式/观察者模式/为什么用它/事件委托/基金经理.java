@@ -16,11 +16,11 @@ public class 基金经理 {
     private String name;
 
     public void buyStockA(){
-        System.out.println("买入诺安");
+        System.out.println(name+"买入诺安");
     }
 
     public void buyStockB(){
-        System.out.println("买入长城汽车");
+        System.out.println(name+"买入长城汽车");
     }
 
 }

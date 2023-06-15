@@ -15,4 +15,9 @@ import lombok.NoArgsConstructor;
 public class 散户 extends Delegator{
 
     private String name;
+
+    public void buy(){
+        System.out.println(name + "买入一些基金");
+        this.delegate();
+    }
 }
